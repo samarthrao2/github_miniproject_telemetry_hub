@@ -1,0 +1,41 @@
+{
+  "name": "fleet-telemetrics-hub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "db:up": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/dev-db.ps1",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "db:seed": "tsx scripts/seed.ts",
+    "typecheck": "tsc --noEmit",
+    "db:down": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/stop-db.ps1",
+    "db:reset": "tsx scripts/migrate.ts --reset",
+    "db:shell": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/db-shell.ps1"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^4.3.1",
+    "@qdrant/js-client-rest": "^1.20.0",
+    "dotenv": "^18.0.9",
+    "drizzle-orm": "^0.45.4",
+    "mysql2": "^3.24.6",
+    "next": "16.4.3",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "csv-parse": "^7.0.3",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}
